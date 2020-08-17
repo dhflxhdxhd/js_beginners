@@ -8,22 +8,17 @@ const body = document.getElementById("body");
 
 /*body.style.backgroundColor= "red";
 title.innerHTML = "Can I do?";
-
 alert("hi");
 // querySelector -> return first children in every Nodes
 function handleResize() {
     console.log("Resizing now.")
 }
-
 function handleclick(){
     body.style.backgroundColor = "white";
 }  
-
 title.addEventListener("click", handleclick);
-
 const age = prompt("How old are you");
 console.log(age);
-
 if (age < 12){
     console.log("you are so young")
 } else {
@@ -52,5 +47,3 @@ function colorClick() {
 }
 
 init();
-
-
