@@ -3,14 +3,28 @@ toDoInput = toDoForm.querySelector("input"),
 toDoList = document.querySelector(".js-todolist");
 
 const TODOS_LS = "toDos"
-const toDos = [];
+let toDos = [];
 
+// function filterFn(todo) {
+//   //true를 return하는 item이 있는 array를 만드는 역할.  
+//   return toDo.id === 1;
+// }
 function delToDo(event){
   // console.dir(event.target);
   // console.log(event.target.parentNode);
+  // html에서 delete
   const btn = event.target;
   const li = btn.parentNode;
   toDoList.removeChild(li);
+  //
+  const cleanToDos = toDos.filter(function(toDo) {
+    console.log(toDo.id, li.id);
+    return toDo.id !== parseInt(li.id);
+  });
+  console.log(cleanToDos);
+  toDos = cleanToDos;
+
+  saveToDos();
 }
 function saveToDos(){
   // 모든 object를 string으로 만들기 위해 JSON.stringfy()
@@ -46,7 +60,7 @@ function handleSubmit(event){
   toDoInput.value = ""; // enter을 누르면 입력한 값 사라짐. 
 }
 
-function something(ToDo){ paintToDo(ToDo.text);}
+function something(toDo){ paintToDo(toDo.text);}
 
 function loadToDos(){
   const loadedToDos = localStorage.getItem(TODOS_LS);
