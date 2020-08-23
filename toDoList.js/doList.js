@@ -5,8 +5,8 @@ const ques = document.querySelector(".js-ques"),
 const doList_LS = "dos";
 let dos = [];
 
-function saveDos(){
-    localStorage.setItem(doList_LS,JSON.stringify(dos));
+function saveDos() {
+    localStorage.setItem(doList_LS, JSON.stringify(dos));
 }
 
 function delList(event) {
@@ -17,25 +17,21 @@ function delList(event) {
     asList.removeChild(li);
 
     // LS에서 delete -> filter사용
-
-   
-    const cleanDos = dos.filter(
-        function(toDo){
-            // console.log(toDo.id, li.id);
-            return toDo.id !== parseInt(li.id);
-        });
-    // console.log(cleanDos);
-    // console.log(dos);
+    const cleanDos = dos.filter(function (toDo) {
+        // console.log(toDo.id, li.id);
+        return toDo.id !== parseInt(li.id);
+    });
+    // console.log(cleanDos); console.log(dos);
     dos = cleanDos;
     // console.log(dos);
     saveDos();
 }
 
-function paintList(text){
+function paintList(text) {
     const li = document.createElement("li");
     const del = document.createElement("button");
     del.innerText = "×";
-    del.addEventListener("dblclick",delList);
+    del.addEventListener("dblclick", delList);
     const span = document.createElement("span");
     const ListId = dos.length + 1;
     span.innerText = text;
@@ -45,16 +41,14 @@ function paintList(text){
     console.log(li);
     asList.appendChild(li);
     const dosObj = {
-        text:text,
-        id : ListId
+        text: text,
+        id: ListId
     }
     dos.push(dosObj);
     saveDos();
-
-
 }
 
-function handleList(event){
+function handleList(event) {
     event.preventDefault();
 
     const currentValue = doListInput.value;
@@ -65,27 +59,19 @@ function handleList(event){
 
 function doListLoad() {
     const toDoList = localStorage.getItem(doList_LS);
-    if(toDoList !== null){
-
-        
-        // parse : 가져온 것을 js object로 변경
-        // console.log(toDoList);
+    if (toDoList !== null) {
+        // parse : 가져온 것을 js object로 변경 console.log(toDoList);
         const parsedToDos = JSON.parse(toDoList);
-        // console.log(parsedToDos);
-        // array를 위한 function
-        parsedToDos.forEach(
-            function(toDo){
-                paintList(toDo.text);
-            }
-         ); 
-
-        
+        // console.log(parsedToDos); array를 위한 function
+        parsedToDos.forEach(function (toDo) {
+            paintList(toDo.text);
+        });
     }
 }
 
-function init(){
-   doListLoad();
-   ques.addEventListener("submit",handleList);
+function init() {
+    doListLoad();
+    ques.addEventListener("submit", handleList);
 }
 
 init();
