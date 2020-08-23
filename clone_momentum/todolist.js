@@ -15,6 +15,8 @@ function delToDo(event){
   // html에서 delete
   const btn = event.target;
   const li = btn.parentNode;
+  // console.log(event.target);
+  // console.log(event.target.parentNode);
   toDoList.removeChild(li);
   //
   const cleanToDos = toDos.filter(function(toDo) {
@@ -22,6 +24,7 @@ function delToDo(event){
     return toDo.id !== parseInt(li.id);
   });
   console.log(cleanToDos);
+  console.log(toDos);
   toDos = cleanToDos;
 
   saveToDos();
