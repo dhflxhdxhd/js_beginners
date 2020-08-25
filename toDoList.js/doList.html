@@ -4,20 +4,38 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="doList.css">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link rel="stylesheet" href="date.css">
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+            integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+            crossorigin="anonymous">
         <title>ToDoList 2020</title>
     </head>
     <body>
         <head>
-            
+            <p class="js-date date"></p>
+            <p class="js-time time"></p>
         </head>
         <section>
-            <form class="js-ques ques">
-                <input type="text" placeholder="Write what are you going to do">
-            </form>
-            <ul class="js-doList doList"></ul>
+
+            <div class="input-group mb-3">
+                <form class="js-ques ques">
+                    <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Write down the schedule"
+                        aria-label="Recipient's username"
+                        aria-describedby="button-addon2">
+                </form>
+            </div>
+
+            <div>
+                <ul class="js-doList doList"></ul>
+            </div>
+
         </section>
-        
+        <script src="date.js"></script>
         <script src="doList.js"></script>
     </body>
 </html>
