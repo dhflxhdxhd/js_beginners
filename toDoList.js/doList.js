@@ -30,6 +30,7 @@ function delList(event) {
 
 function paintList(text) {
     const li = document.createElement("li");
+    li.className ="list-group-item css-li";
     const del = document.createElement("button");
     del.innerText = "×";
     del.addEventListener("dblclick", delList);
