@@ -5,7 +5,7 @@ const IMG_NUMBER = 3;
 function paintImg(imgNumber){  
     const image = new Image();
 
-    img.src =`D:/js/clone_momentum/image/ocean01.jpg`
+    // img.src =`D:/js/clone_momentum/image/ocean01.jpg`
     body.appendChild(image);
 }
 
