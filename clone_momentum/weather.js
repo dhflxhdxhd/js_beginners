@@ -7,20 +7,18 @@ function getWeather(lat, lon) {
     // data 얻는 방법 : fetch 이용
     fetch(
         `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`
-    ).then(//data가 넘어왔을 때 호출. 
-        function(response){
-            // javascript object -> json
-            // console.log(response.json());
+    )
+        .then( //data가 넘어왔을 때 호출.
+                function (response) {
+            // javascript object -> json console.log(response.json());
             return response.json();
-        }).then(
-
-            function(json){
-                console.log(json);
-                const temp =  json.main.temp;
-                const place = json.name;
-                weather.innerText = `${temp} , ${place}`;
-            }
-        )
+        })
+        .then(function (json) {
+            console.log(json);
+            const temp = json.main.temp;
+            const place = json.name;
+            weather.innerText = `${temp} , ${place}`;
+        })
 
 }
 
