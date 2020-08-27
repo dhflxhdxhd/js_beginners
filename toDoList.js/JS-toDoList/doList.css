@@ -1,0 +1,16 @@
+.ques {
+    margin: 0 auto;
+    margin-top: 10px;
+    width: 40%;
+}
+
+input::placeholder {
+    text-align: center;
+    font-style: italic;
+    font-size: 12px;
+}
+
+.doList {
+    width: 60%;
+    margin : 0 auto;
+}
