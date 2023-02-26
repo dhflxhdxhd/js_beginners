@@ -9,13 +9,18 @@ function makeRandomNumber(){
     return Math.floor(Math.random * maxNum + minNum);
 }
 
-function checkResult(){
+function printGuessInput(){
     const userGuess = Number(guessInput.value);
+    checkResult(userGuess);
+}
+
+function checkResult(userGuess){
+
 }
 
 function play(){
     let randomNumber = makeRandomNumber();
-    guessSubmit.addEventListener("click",checkResult);
+    guessSubmit.addEventListener("click",printGuessInput);
 }
 
 play();
