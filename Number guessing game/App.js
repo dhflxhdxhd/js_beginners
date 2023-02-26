@@ -10,17 +10,26 @@ function makeRandomNumber(){
 }
 
 function printGuessInput(){
-    const userGuess = Number(guessInput.value);
-    checkResult(userGuess);
+    
 }
 
-function checkResult(userGuess){
+function isSuccess(){
+    
+}
 
+function isFail(){
+
+}
+
+function checkResult(randomNumber){
+    printGuessInput();
+    const userGuess = Number(guessInput.value);
+    randomNumber === userGuess ? isSuccess : isFail
 }
 
 function play(){
     let randomNumber = makeRandomNumber();
-    guessSubmit.addEventListener("click",printGuessInput);
+    guessSubmit.addEventListener("click",checkResult(randomNumber));
 }
 
 play();
