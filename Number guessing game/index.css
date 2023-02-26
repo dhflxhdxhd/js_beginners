@@ -1,0 +1,34 @@
+*{
+    box-sizing: border-box;
+}
+
+html, body, div, span, p {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline; 
+}
+
+body{
+    width: 100%;
+    height: 100%;
+} 
+
+.contents-wrapper{
+    width: 60%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.contents-wrapper p{
+    overflow: auto;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+}
+
+.guessInput{
+    width: 200px;
+}
+
