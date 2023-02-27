@@ -31,7 +31,7 @@
     - 랜덤값 < 숫자 이면 "Number is high" 출력
     - 랜덤값 > 숫자 이면 "Number is low" 출력
 
-- [showRestart] restart 버튼 생성
+- [showRestartBtn] restart 버튼 생성
 
 - [Restart] restart 버튼 누르면 게임 다시 시작
     - 턴 숫자 초기화
