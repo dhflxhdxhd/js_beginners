@@ -1,13 +1,13 @@
 # Number guessing game
 ## 기능 목록
-- [] 턴 숫자 기록
+- 턴 숫자 기록
     - 초기값 0
     - 1부터 10까지
 
-- [makeRandomNumber] 랜덤값 생성
+- 숫자 입력받기
     - 1과 100 사이의 수
 
-- [] 숫자 입력받기
+- [makeRandomNumber] 랜덤값 생성
     - 1과 100 사이의 수
 
 - [printGuessInput] 제출한 숫자 출력
@@ -28,10 +28,12 @@
     - Restart 버튼 활성화
 
 - [giveHint] 힌트 주기
-    - 숫자 < 랜덤값 이면 "Number is low" 출력
-    - 숫자 > 랜덤값 이면 "Number is high" 출력
+    - 랜덤값 < 숫자 이면 "Number is high" 출력
+    - 랜덤값 > 숫자 이면 "Number is low" 출력
+
+- [showRestart] restart 버튼 생성
 
 - [Restart] restart 버튼 누르면 게임 다시 시작
-    - 랜덤값 다시 생성
     - 턴 숫자 초기화
-    - UI 초기화 
+    - UI 초기화
+    - play() 
