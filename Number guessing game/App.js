@@ -1,9 +1,9 @@
 const input = document.querySelector(".guessInput");
 const guessInput = document.querySelector(".guessInput");
 const guessSubmit = document.querySelector(".guessSubmit");
-const previousGuess = document.querySelector(".previousGuess");
-const guessResult = document.querySelector(".guessResult");
-const guessHint = document.querySelector(".guessHint");
+let previousGuess = document.querySelector(".previousGuess");
+let guessResult = document.querySelector(".guessResult");
+let guessHint = document.querySelector(".guessHint");
 const restartBtn = document.querySelector(".restartBtn");
 const minNum = 1;
 const maxNum = 100;
@@ -85,8 +85,8 @@ function checkResult(randomNumber){
 
 function reset(){
     previousGuess.textContent = "";
-    guessResult = "";
-    guessHint = "";
+    guessResult.textContent = "";
+    guessHint.textContent = "";
 }
 
 function play(){
