@@ -6,6 +6,7 @@
 
 - 숫자 입력받기
     - 1과 100 사이의 수
+    - [checkGuessInput] 입력값이 1과 100 사이의 수가 아닐 경우 error
 
 - [makeRandomNumber] 랜덤값 생성
     - 1과 100 사이의 수
