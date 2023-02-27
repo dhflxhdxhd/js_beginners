@@ -1,13 +1,13 @@
 # Number guessing game
 ## 기능 목록
-- [] 랜덤값 생성
+- [makeRandomNumber] 랜덤값 생성
     - 1과 100 사이의 수
 - [] 턴 숫자 기록
     - 1부터 10까지
 - [] 숫자 입력받기
     - 1과 100 사이의 수
-- [] 제출한 숫자 출력
-- [] 숫자 확인
+- [printGuessInput] 제출한 숫자 출력
+- [checkResult] 숫자 확인
     - [] 숫자가 랜덤값이면 success
     - [] 아니면 fail & 턴++
 - [] success일 경우 
