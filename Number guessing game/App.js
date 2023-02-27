@@ -1,6 +1,9 @@
 const input = document.querySelector(".guessInput");
 const guessInput = document.querySelector(".guessInput");
 const guessSubmit = document.querySelector(".guessSubmit");
+const previousGuess = document.querySelector(".previousGuess");
+const guessResult = document.querySelector(".guessResult");
+const guessHint = document.querySelector(".guessHint");
 const minNum = 1;
 const maxNum = 100;
 let turn = 0;
@@ -10,8 +13,11 @@ function makeRandomNumber(){
     // return Math.floor(Math.random * maxNum + minNum);
 }
 
-function printGuessInput(){
-    
+function printGuessInput(userGuess){
+    if (turn === 1){
+        previousGuess.textContent = "previous Guess : "
+    }
+    previousGuess.textContent += userGuess + " ";
 }
 
 function isSuccess(){
@@ -38,12 +44,13 @@ function giveHint(){
 
 function checkResult(randomNumber){
     console.log("turn:" + turn);
-    printGuessInput();
     const userGuess = Number(guessInput.value);
+    printGuessInput(userGuess);
+    
 
     console.log(userGuess);
     guessInput.value = ""
-    
+
     if (userGuess === randomNumber){
         isSuccess();
         Restart();
