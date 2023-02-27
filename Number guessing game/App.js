@@ -23,10 +23,16 @@ function isFail(){
 }
 
 function checkResult(randomNumber){
+    console.log("turn:" + turn);
     printGuessInput();
     const userGuess = Number(guessInput.value);
 
     console.log(userGuess);
+
+    if (userGuess === randomNumber){
+
+    }
+
     guessInput.value = ""
 }
 
@@ -34,6 +40,7 @@ function play(){
     let randomNumber = makeRandomNumber();
     console.log(randomNumber);
     guessSubmit.addEventListener("click", () => {
+        turn++;
         checkResult(randomNumber);
     });
 }
