@@ -6,7 +6,8 @@ const maxNum = 100;
 let turn = 0;
 
 function makeRandomNumber(){
-    return Math.floor(Math.random * maxNum + minNum);
+    return Math.floor(Math.random()*maxNum + minNum);
+    // return Math.floor(Math.random * maxNum + minNum);
 }
 
 function printGuessInput(){
@@ -14,21 +15,28 @@ function printGuessInput(){
 }
 
 function isSuccess(){
-    
+    console.log("success");
 }
 
 function isFail(){
-
+    // console.log("fail");
 }
 
 function checkResult(randomNumber){
     printGuessInput();
     const userGuess = Number(guessInput.value);
-    randomNumber === userGuess ? isSuccess : isFail
+
+    if (randomNumber === userGuess){
+        isSuccess();
+    }else {
+        isFail();
+    }
+
 }
 
 function play(){
-    let randomNumber = makeRandomNumber();
+    const randomNumber = makeRandomNumber();
+    console.log(randomNumber);
     guessSubmit.addEventListener("click",checkResult(randomNumber));
 }
 
