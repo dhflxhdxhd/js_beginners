@@ -19,7 +19,21 @@ function isSuccess(){
 }
 
 function isFail(){
-    // console.log("fail");
+    console.log("fail");
+}
+
+
+function Restart() {
+    console.log("restart");
+}
+
+function gameOver(){
+    console.log("gameOver");
+    Restart();
+}
+
+function giveHint(){
+
 }
 
 function checkResult(randomNumber){
@@ -28,12 +42,18 @@ function checkResult(randomNumber){
     const userGuess = Number(guessInput.value);
 
     console.log(userGuess);
-
+    guessInput.value = ""
+    
     if (userGuess === randomNumber){
-
+        isSuccess();
+        Restart();
     }
 
-    guessInput.value = ""
+    if (turn === 10){
+        gameOver();
+    }
+
+    giveHint();
 }
 
 function play(){
