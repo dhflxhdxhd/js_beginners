@@ -21,13 +21,15 @@ function printGuessInput(userGuess){
 }
 
 function isSuccess(){
-    guessResult.textContent = "Success"
+    guessResult.textContent = "Success";
     console.log("success");
+    guessSubmit.disabled = true;
 }
 
 function isFail(){
-    guessResult.textContent = "Game Over"
+    guessResult.textContent = "Game Over";
     console.log("fail");
+    guessSubmit.disabled = tru;e
 }
 
 
