@@ -23,9 +23,10 @@ function printGuessInput(userGuess){
 
 function isSuccess(){
     guessResult.textContent = "Success";
+    guessHint.textContent = "";
     console.log("success");
     guessSubmit.disabled = true;
-    showRestart();
+    showRestartBtn();
 }
 
 function isFail(){
@@ -35,7 +36,7 @@ function isFail(){
 }
 
 
-function showRestart() {
+function showRestartBtn() {
     restartBtn.style.display = "block";
     console.log("restart");
     restartBtn.addEventListener("click",restart);
@@ -48,7 +49,7 @@ function restart(){
     play();
 }
 
-function gameOver(){
+function gameOver(){ 
     console.log("gameOver");
     showRestart();
 }
@@ -76,13 +77,12 @@ function checkResult(randomNumber){
 
     if (userGuess === randomNumber){
         isSuccess();
-    }
-
-    if (turn === 10){
+    }else if(turn === 10){
         gameOver();
+    }else{
+        giveHint(randomNumber,userGuess);
     }
 
-    giveHint(randomNumber,userGuess);
 }
 
 function reset(){
@@ -92,6 +92,7 @@ function reset(){
 }
 
 function play(){
+    guessSubmit.disabled = false;
     let randomNumber = makeRandomNumber();
     console.log(randomNumber);
     guessSubmit.addEventListener("click", () => {
