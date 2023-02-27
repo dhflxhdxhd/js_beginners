@@ -21,10 +21,12 @@ function printGuessInput(userGuess){
 }
 
 function isSuccess(){
+    guessResult.textContent = "Success"
     console.log("success");
 }
 
 function isFail(){
+    guessResult.textContent = "Game Over"
     console.log("fail");
 }
 
@@ -53,7 +55,6 @@ function checkResult(randomNumber){
 
     if (userGuess === randomNumber){
         isSuccess();
-        Restart();
     }
 
     if (turn === 10){
