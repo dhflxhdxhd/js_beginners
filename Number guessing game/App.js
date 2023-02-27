@@ -9,6 +9,14 @@ const minNum = 1;
 const maxNum = 100;
 let turn = 0;
 
+function checkGuessInput(randomNumber) {
+    if (guessInput.value < 1 || guessInput.value > 100){
+        alert("1이상 100이하의 수를 입력하세요.");
+        return false;
+    } 
+    return true;
+}
+
 function makeRandomNumber(){
     return Math.floor(Math.random()*maxNum + minNum);
     // return Math.floor(Math.random * maxNum + minNum);
@@ -97,8 +105,10 @@ function play(){
     let randomNumber = makeRandomNumber();
     console.log(randomNumber);
     guessSubmit.addEventListener("click", () => {
-        turn++;
-        checkResult(randomNumber);
+        if(checkGuessInput()){
+            turn++;
+            checkResult(randomNumber);  
+        }
     });
 }
 
