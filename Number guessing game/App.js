@@ -56,8 +56,10 @@ function gameOver(){
 
 function giveHint(randomNumber,userGuess){
     if (randomNumber < userGuess){
+        guessHint.textContent = "Number is high";
         console.log("Number is high");
     }else{
+        guessHint.textContent = "Number is low";
         console.log("Number is low");
     }
 
