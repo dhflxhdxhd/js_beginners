@@ -4,6 +4,7 @@ const guessSubmit = document.querySelector(".guessSubmit");
 const previousGuess = document.querySelector(".previousGuess");
 const guessResult = document.querySelector(".guessResult");
 const guessHint = document.querySelector(".guessHint");
+const restartBtn = document.querySelector(".restartBtn");
 const minNum = 1;
 const maxNum = 100;
 let turn = 0;
@@ -24,6 +25,7 @@ function isSuccess(){
     guessResult.textContent = "Success";
     console.log("success");
     guessSubmit.disabled = true;
+    showRestart();
 }
 
 function isFail(){
@@ -33,14 +35,21 @@ function isFail(){
 }
 
 
-function Restart() {
+function showRestart() {
+    restartBtn.style.display = "block";
     console.log("restart");
+
+}
+
+function restart(){
+    restartBtn.style.display = "none";    
 }
 
 function gameOver(){
     console.log("gameOver");
-    Restart();
+    showRestart();
 }
+
 
 function giveHint(){
 
