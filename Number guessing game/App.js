@@ -26,18 +26,16 @@ function checkResult(randomNumber){
     printGuessInput();
     const userGuess = Number(guessInput.value);
 
-    if (randomNumber === userGuess){
-        isSuccess();
-    }else {
-        isFail();
-    }
-
+    console.log(userGuess);
+    guessInput.value = ""
 }
 
 function play(){
-    const randomNumber = makeRandomNumber();
+    let randomNumber = makeRandomNumber();
     console.log(randomNumber);
-    guessSubmit.addEventListener("click",checkResult(randomNumber));
+    guessSubmit.addEventListener("click", () => {
+        checkResult(randomNumber);
+    });
 }
 
 play();
