@@ -1,30 +1,37 @@
 # Number guessing game
 ## 기능 목록
+- [] 턴 숫자 기록
+    - 초기값 0
+    - 1부터 10까지
+    
 - [makeRandomNumber] 랜덤값 생성
     - 1과 100 사이의 수
-- [] 턴 숫자 기록
-    - 1부터 10까지
+
 - [] 숫자 입력받기
     - 1과 100 사이의 수
+
 - [printGuessInput] 제출한 숫자 출력
+- 턴++
 - [checkResult] 숫자 확인
-    - [] 숫자가 랜덤값이면 success
-    - [] 아니면 fail & 턴++
-- [] success일 경우 
+    - 숫자가 랜덤값이면 success -> Restart
+    - 턴이 10이면 game over -> Restart
+    - 턴이 10이 아니면 힌트 주기
+
+- [isSuccess] success
     - 성공 메세지 출력
     - submit 버튼 비활성화
-    - [] 게임 다시 시작
-- [] fail일 경우 
-    - [] 턴 숫자가 10보다 작다면 힌트 주기
-    - [] 턴 숫자가 10보다 크거나 같다면 게임 종료
-- [] 힌트 주기
-    - [] 숫자 < 랜덤값 이면 "Number is low" 출력
-    - [] 숫자 > 랜덤값 이면 "Number is high" 출력
-- [] 게임 종료
+    - [Restart] 게임 다시 시작
+
+- [gameOver] game over
     - "Game Over" 메세지 출력
     - submit 버튼 비활성화
-    - [] 게임 다시 시작
-- [] 게임 다시 시작
+    - [Restart] 게임 다시 시작
+
+- [giveHint] 힌트 주기
+    - 숫자 < 랜덤값 이면 "Number is low" 출력
+    - 숫자 > 랜덤값 이면 "Number is high" 출력
+
+- [Restart] 게임 다시 시작
     - 랜덤값 다시 생성
     - 턴 숫자 초기화
     - UI 초기화 
