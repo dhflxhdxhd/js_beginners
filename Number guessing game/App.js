@@ -109,6 +109,8 @@ function play(){
             turn++;
             checkResult(randomNumber);  
         }
+
+        guessInput.value = "";
     });
 }
 
