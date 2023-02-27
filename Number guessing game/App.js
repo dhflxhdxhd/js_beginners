@@ -23,7 +23,6 @@ function printGuessInput(userGuess){
 
 function isSuccess(){
     guessResult.textContent = "Success";
-    guessHint.textContent = "";
     console.log("success");
     guessSubmit.disabled = true;
     showRestartBtn();
@@ -37,6 +36,7 @@ function isFail(){
 
 
 function showRestartBtn() {
+    guessHint.textContent = "";
     restartBtn.style.display = "block";
     console.log("restart");
     restartBtn.addEventListener("click",restart);
@@ -51,7 +51,8 @@ function restart(){
 
 function gameOver(){ 
     console.log("gameOver");
-    showRestart();
+    guessSubmit.disabled = true;
+    showRestartBtn();
 }
 
 
