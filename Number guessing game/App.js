@@ -38,11 +38,13 @@ function isFail(){
 function showRestart() {
     restartBtn.style.display = "block";
     console.log("restart");
-
+    restartBtn.addEventListener("click",restart);
 }
 
 function restart(){
-    restartBtn.style.display = "none";    
+    restartBtn.style.display = "none"; 
+    reset();
+    play();
 }
 
 function gameOver(){
@@ -73,6 +75,12 @@ function checkResult(randomNumber){
     }
 
     giveHint();
+}
+
+function reset(){
+    previousGuess.textContent = "";
+    guessResult = "";
+    guessHint = "";
 }
 
 function play(){
