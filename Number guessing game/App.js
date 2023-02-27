@@ -29,7 +29,7 @@ function isSuccess(){
 function isFail(){
     guessResult.textContent = "Game Over";
     console.log("fail");
-    guessSubmit.disabled = tru;e
+    guessSubmit.disabled = true;
 }
 
 
