@@ -42,7 +42,8 @@ function showRestart() {
 }
 
 function restart(){
-    restartBtn.style.display = "none"; 
+    restartBtn.style.display = "none";
+    turn = 0; 
     reset();
     play();
 }
@@ -53,7 +54,12 @@ function gameOver(){
 }
 
 
-function giveHint(){
+function giveHint(randomNumber,userGuess){
+    if (randomNumber < userGuess){
+        console.log("Number is high");
+    }else{
+        console.log("Number is low");
+    }
 
 }
 
@@ -74,7 +80,7 @@ function checkResult(randomNumber){
         gameOver();
     }
 
-    giveHint();
+    giveHint(randomNumber,userGuess);
 }
 
 function reset(){
