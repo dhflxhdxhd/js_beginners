@@ -5,13 +5,22 @@ let previousGuess = document.querySelector(".previousGuess");
 let guessResult = document.querySelector(".guessResult");
 let guessHint = document.querySelector(".guessHint");
 const restartBtn = document.querySelector(".restartBtn");
+
+const {
+    HINT_MESSAGE,
+    ERROR,
+    RESULT,
+    SENTENCE,
+} = require("./constant/constant.js");
+
+
 const minNum = 1;
 const maxNum = 100;
 let turn = 0;
 
 function checkGuessInput(randomNumber) {
     if (guessInput.value < 1 || guessInput.value > 100){
-        alert("1이상 100이하의 수를 입력하세요.");
+        alert(ERROR.INPUT_RANGE);
         return false;
     } 
     return true;
@@ -24,21 +33,21 @@ function makeRandomNumber(){
 
 function printGuessInput(userGuess){
     if (turn === 1){
-        previousGuess.textContent = "previous Guess : "
+        previousGuess.textContent = SENTENCE.PREVIOUS_GUESS;
     }
     previousGuess.textContent += userGuess + " ";
 }
 
 function isSuccess(){
-    guessResult.textContent = "Success";
-    console.log("success");
+    guessResult.textContent = RESULT.SUCCESS;
+    console.log(RESULT.SUCCESS);
     guessSubmit.disabled = true;
     showRestartBtn();
 }
 
 function isFail(){
-    guessResult.textContent = "Game Over";
-    console.log("fail");
+    guessResult.textContent = RESULT.FAIL;
+    console.log(RESULT.FAIL);
     guessSubmit.disabled = true;
 }
 
@@ -58,7 +67,7 @@ function restart(){
 }
 
 function gameOver(){ 
-    console.log("gameOver");
+    console.log(RESULT.FAIL);
     guessSubmit.disabled = true;
     showRestartBtn();
 }
@@ -66,11 +75,11 @@ function gameOver(){
 
 function giveHint(randomNumber,userGuess){
     if (randomNumber < userGuess){
-        guessHint.textContent = "Number is high";
-        console.log("Number is high");
+        guessHint.textContent = HINT_MESSAGE.HIGH;
+        console.log(HINT_MESSAGE.HIGH);
     }else{
-        guessHint.textContent = "Number is low";
-        console.log("Number is low");
+        guessHint.textContent = HINT_MESSAGE.LOW;
+        console.log(HINT_MESSAGE.LOW);
     }
 
 }
