@@ -15,3 +15,10 @@ const RESULT = Object.freeze({
 const SENTENCE = Object.freeze({
     PREVIOUS_GUESS : "previous Guess : ",
 })
+
+module.exports = {
+    HINT_MESSAGE,
+    ERROR,
+    RESULT,
+    SENTENCE,
+};
