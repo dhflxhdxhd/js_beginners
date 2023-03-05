@@ -1,5 +1,5 @@
 
-class randomNumberGenerator {
+class RandomNumberGenerator {
     constructor(){
         this.minNum = 1;
         this.maxNum = 100;
@@ -10,3 +10,5 @@ class randomNumberGenerator {
         return Math.floor(Math.random()*maxNum + minNum);
     }
 }
+
+module.exports = RandomNumberGenerator;
