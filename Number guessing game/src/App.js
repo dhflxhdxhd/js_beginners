@@ -14,9 +14,33 @@ const {
 } = require("./constant/constant.js");
 
 
-const minNum = 1;
-const maxNum = 100;
 let turn = 0;
+
+
+
+class App{
+    constructor(){
+
+    }
+
+    play(){
+        guessSubmit.disabled = false;
+        let randomNumber = makeRandomNumber();
+        console.log(randomNumber);
+        guessSubmit.addEventListener("click", () => {
+            if(checkGuessInput()){
+                turn++;
+                checkResult(randomNumber);  
+            }
+    
+            guessInput.value = "";
+        });
+    }
+}
+
+const app = new App();
+app.play();
+
 
 function checkGuessInput(randomNumber) {
     if (guessInput.value < 1 || guessInput.value > 100){
@@ -26,10 +50,7 @@ function checkGuessInput(randomNumber) {
     return true;
 }
 
-function makeRandomNumber(){
-    return Math.floor(Math.random()*maxNum + minNum);
-    // return Math.floor(Math.random * maxNum + minNum);
-}
+
 
 function printGuessInput(userGuess){
     if (turn === 1){
@@ -109,18 +130,6 @@ function reset(){
     guessHint.textContent = "";
 }
 
-function play(){
-    guessSubmit.disabled = false;
-    let randomNumber = makeRandomNumber();
-    console.log(randomNumber);
-    guessSubmit.addEventListener("click", () => {
-        if(checkGuessInput()){
-            turn++;
-            checkResult(randomNumber);  
-        }
 
-        guessInput.value = "";
-    });
-}
 
 play();
