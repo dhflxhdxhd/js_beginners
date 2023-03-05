@@ -17,6 +17,8 @@ const {
 let turn = 0;
 
 
+const RandomNumberGenerator = require("./randomNumberGenerator.js")
+
 
 class App{
     constructor(){
@@ -25,7 +27,7 @@ class App{
 
     play(){
         guessSubmit.disabled = false;
-        let randomNumber = makeRandomNumber();
+        let randomNumber = RandomNumberGenerator.makeRandomNumber();
         console.log(randomNumber);
         guessSubmit.addEventListener("click", () => {
             if(checkGuessInput()){
