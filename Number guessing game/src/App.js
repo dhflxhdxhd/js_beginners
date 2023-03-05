@@ -17,7 +17,7 @@ const {
 let turn = 0;
 
 
-const RandomNumberGenerator = require("./randomNumberGenerator.js")
+const RandomNumberGenerator = require("./RandomNumberGenerator.js")
 
 
 class App{
