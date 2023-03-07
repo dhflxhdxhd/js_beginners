@@ -6,9 +6,9 @@ class RandomNumberGenerator {
 
     }
 
-    static makeRandomNumber(){
-        return Math.floor(Math.random()*maxNum + minNum);
+    makeRandomNumber() {
+        return Math.floor(Math.random()*this.maxNum + this.minNum);
     }
 }
 
-module.exports = RandomNumberGenerator;
+export {RandomNumberGenerator};
