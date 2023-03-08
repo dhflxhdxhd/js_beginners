@@ -1,0 +1,16 @@
+* {
+  box-sizing: border-box;  
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+}
+
+.section{
+    border: 1px solid #252525;
+    display: flex;
+    justify-content: center;
+    font-size: 1.2rem;
+}
