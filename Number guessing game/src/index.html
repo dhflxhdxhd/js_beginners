@@ -1,33 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="index.css">
-</head>
-<body>
-    <div class="contents-wrapper">
-        <div class="guess">
-            <h1>Number guessing game</h1>
-            <p>We have selected a random number between 1 and 100. 
-                See if you can guess it in 10 turns or fewer. 
-                We'll tell you if your guess was too high or too low.</p>
-        </div>
-        <div class="guessForm">
-            <label for="inputGuess">Enter a guess:</label>
-            <input type="number" min="1" max="100" id="inputGuess" class="guessInput">
-            <input type="submit" value="submit guess" class="guessSubmit">
-        </div>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <div class="contents-wrapper">
+            <div class="guess">
+                <h1>Number guessing game</h1>
+                <p>We have selected a random number between 1 and 100. See if you can guess it
+                    in 10 turns or fewer. We'll tell you if your guess was too high or too low.</p>
+            </div>
+            <div class="guessForm">
+                <label for="inputGuess">Enter a guess:</label>
+                <input type="number" min="1" max="100" id="inputGuess" class="guessInput">
+                <input type="submit" value="submit guess" class="guessSubmit">
+            </div>
 
-        <div>
-            <div class="previousGuess"></div>
-            <div class="guessResult"></div>
-            <div class="guessHint"></div>
-            <div class="restartBtn">다시 시작</div>
+            <div>
+                <div class="previousGuess"></div>
+                <div class="guessResult"></div>
+                <div class="guessHint"></div>
+                <div class="restartBtn">다시 시작</div>
+            </div>
         </div>
-    </div>
-    <script type="module" src="App.js"></script>
-</body>
+        <script type="module" src="App.js"></script>
+    </body>
 </html>
