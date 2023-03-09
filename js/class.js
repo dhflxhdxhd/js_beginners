@@ -1,36 +1,71 @@
-// class 이름  -> 파스칼케이스
-
-class Person {}
-const Person = class MyClass {};
-
-const Person = class {};
-
-// 클래스 : 함수
-// 클래스 몸체에는 0개 이상의 메서드만 정의 -> 종류 : constructor(생성자), 프로토타입 메서드, 정적 메서드
-
-// 클래스 선언문
+// class는 객체를 만들기 위함. 
+// class body : 생성자, 프로토타입 메서드, 정적 메서드
+/*
 class Person {
-    // constructor : 인스턴스를 생성하고 초기화하기 위한 특수한 메서드
-  constructor(name) {
-    // 인스턴스 생성 및 초기화
-    this.name = name;
-  }
+    // 인스턴스 생성자
+    constructor(name){
+        this.name = name;
+    }
 
-  sayHi() {
-    console.log(`hi ${this.name}`);
-  }
+    // 프로토타입 메서드
+    sayHi(){
+        console.log("hi");
+    }
 
-  static sayBye() {
-    console.log('bye');
-  }
+    // 정적 메서드
+    static sayHello() {
+        console.log("hello");
+    }
 }
 
-// 인스턴스 생성
-const me = new Person('Kim');
+const me = new Person('Lee');
 
-// 인스턴스의 프로퍼티 참조
 console.log(me.name);
-// 프로토타입 메서드 호출
 me.sayHi();
-// 정적 메서드 호출
 Person.sayHello();
+*/
+
+class Person {
+    constructor(name, age, city){
+        this.name = name;
+        this.age = age;
+        this.city = city;
+    }
+
+    nextYearage(){
+        return Number(this.age) + 1;
+    }
+}
+
+// 상속
+/*
+class introducePerson extends Person {
+    introduce(){
+        return `${this.city}에 사는 ${this.name}입니다.`
+    }
+}
+
+let profile = new introducePerson('a', 19, 'jeju');
+console.log(profile);
+*/
+
+// super
+// 부모가 가지고 있는 생성자, 메서드 호출
+class introducePerson extends Person {
+    constructor(name,age,city,dream){
+        super(name,age,city);
+        this.dream = dream;
+    }
+    
+    introduce(){
+        return `${this.city}에 사는 ${this.name}입니다. 
+                내년에 ${super.nextYearage()}살이 됩니다. 
+                장래희망은 ${this.dream}입니다.`
+    }
+}
+
+let myProfile = new introducePerson('a',24,'jeju','개발자');
+console.log(myProfile.introduce());
+
+
+
