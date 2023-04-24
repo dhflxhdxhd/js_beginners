@@ -1,7 +1,6 @@
 const Judge = {
-    checkResult(randomNumber,guessInput,turn) {
-        const userGuess = Number(guessInput.value);
-        // printGuessInput(userGuess);
+    checkResult(randomNumber,userGuess,turn) {
+        
 
         console.log(userGuess);
 

@@ -1,5 +1,6 @@
 import Judge from "./Judge.js";
-
+import InputView from "./InputView.js";
+import {HINT_MESSAGE, ERROR, RESULT, SENTENCE} from "./constant/constant.js";
 
 let turn = 0;
 
@@ -7,6 +8,7 @@ class SubmitBtn{
     constructor(button,guessInput){
         this.button = button;
         this.guessInput = guessInput;
+        this.turn;
     }
 
     setSubmitBtn(){
@@ -22,17 +24,21 @@ class SubmitBtn{
     }
     
     clickSubmit(randomNumber){
-        let JudgeResult = ""
         this.button.addEventListener("click", () => {
+            console.log("hi")
             let checkResult = this.checkGuessInput();
             if (checkResult) {
                 turn++;
                 console.log(`turn ${turn}`)
-                JudgeResult = Judge.checkResult(randomNumber,this.guessInput,turn);
+                console.log(checkResult.value)
+                
+                const userGuess = Number(this.guessInput.value);
+                InputView.printGuessInput(userGuess);
+                Judge.checkResult(randomNumber,userGuess,turn);
             }
-            this.guessInput.value = ""
-            return JudgeResult;
+            this.guessInput = ""
         });
+
     }
     
 }
