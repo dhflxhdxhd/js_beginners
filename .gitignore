@@ -1,6 +1,1 @@
-/basic.js
-package-lock.json
-package.json
-.prettierrc
-.eslintrc.js
-/node_modules
+node_modules
