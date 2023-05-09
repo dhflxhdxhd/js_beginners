@@ -18,7 +18,33 @@
             min-height: 100vh;
             margin: 0 auto;
         }
+
+        /* ? position relative - absolute */
         .slide_wrapper{
+            position: relative;
+            width: 960px;
+            margin: 0 auto;
+            height: 300px;
+            overflow: hidden;
+        }
+
+        .slides{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 2610px;
+            display: flex;
+        }
+
+        .slides li{
+            width: 300px;
+            height: 300px;
+        }
+
+        .slides li:not(:last-child){
+            margin-right: 30px;
+        }
+        /* .slide_wrapper{
             display: flex;            
         }
         .slides{
@@ -32,7 +58,7 @@
             align-items: center;
             justify-content: center;
             font-size: 4em;
-        }
+        } */
         li:nth-child(4n-3){
             background-color: #f8e1e3;
         }
@@ -46,6 +72,20 @@
             background-color: #A6C1E8;
         }
 
+        .controls{
+            text-align: center;
+            margin-top: 50px;
+        }
+        .controls span{
+            /* position:absolute; */
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            margin: 0 10px;
+            /* top: 50%; */
+            /* 자기 키의 반만큼 위로 */
+            /* transform: translateY(-50%); */
+        }
     </style>
     <div class="slide_wrapper">
         <ul class="slides">
@@ -58,12 +98,12 @@
             <li>7</li>
             <li>8</li>
         </ul>
-
-        <p class="controls">
-            <span class="prev"></span>
-            <span class="next"></span>
-        </p>
     </div>
+
+    <p class="controls">
+        <span class="prev">prev</span>
+        <span class="next">next</span>
+    </p>
     
 </body>
 </html>
