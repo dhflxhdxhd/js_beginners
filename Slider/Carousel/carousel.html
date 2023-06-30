@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carousel 무한 루프 슬라이드 구현</title>
+</head>
+<body>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            list-style: none;
+        }
+        body{
+            min-height: 100vh;
+            margin: 0 auto;
+        }
+        .slide_wrapper{
+            position: relative;
+            width: 960px;
+            height: 300px;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+        .slides{
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: flex;
+        }
+        .slides li{
+            width: 300px;
+            height: 300px;
+        }
+
+        .slides li:not(:last-child){
+            margin-right: 30px;
+        }
+
+        li:nth-child(4n-3){
+            background-color: #f8e1e3;
+        }
+        li:nth-child(4n-2){
+            background-color: #FFEAB5;
+        }
+        li:nth-child(4n-1){
+            background-color: #D3E7DC;
+        }
+        li:nth-child(4n){
+            background-color: #A6C1E8;
+        }
+        
+    </style>
+
+    <div class="slide_wrapper">
+        <ul class="slides">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+        </ul>
+    </div>
+</body>
+</html>
